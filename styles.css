@@ -335,7 +335,7 @@ button {
 	left: -9px;
 	border-radius: 50%;
 	transform: scale(0.2);
-	transition: transform, background-color 0.2s linear;
+	transition: transform, background-color, left 0.2s linear;
 }
 
 #themeButton:hover::before {
@@ -344,4 +344,5 @@ button {
 
 .dark #themeButton::before {
 	background-color: var(--light-background);
+	left: 45px;
 }
