@@ -16,6 +16,19 @@ const stopAnimation = (event) => {
 		event.target.innerHTML = 'Stop Animation';
 	}
 
+};
+
+const changeTheme = (event) => {
+
+	if (document.body.classList.contains('dark')) {
+		document.body.classList.remove('dark');
+		event.target.innerHTML = 'Light';
+	}
+	else {
+		document.body.classList.add('dark');
+		event.target.innerHTML = 'Dark';
+	}
+
 }
 
 const rotate = (direction) => {
@@ -35,11 +48,13 @@ const rotate = (direction) => {
 		rotation.x = rotation.x + 90;
 	}
 
-	cube.style.transform = `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`;
+	cube.style.transform = `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) rotateZ(45deg)`;
 
 }
 
 document.getElementById("stopButton").addEventListener("click", stopAnimation);
+
+document.getElementById("themeButton").addEventListener("click", changeTheme);
 
 document.getElementById("rotateLeft").addEventListener("click", () => rotate("left"));
 document.getElementById("rotateRight").addEventListener("click", () => rotate("right"));
