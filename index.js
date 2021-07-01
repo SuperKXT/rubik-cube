@@ -1,3 +1,4 @@
+
 const rotation = {
 	x: 0,
 	y: 0,
@@ -48,7 +49,42 @@ const rotate = (direction) => {
 		rotation.x = rotation.x + 90;
 	}
 
-	cube.style.transform = `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) rotateZ(45deg)`;
+	cube.style.transform = `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`;
+
+}
+
+window.onload = () => {
+
+	const transformPrefixes = [
+		'',
+		'rotateY(90deg) ',
+		'rotateY(180deg) ',
+		'rotateY(270deg) ',
+		'rotateX(90deg) ',
+		'rotateX(-90deg) ',
+	];
+
+	const sideTransforms = [
+		'translateX(calc(-1 * var(--piece-size))) translateY(calc(-1 * var(--piece-size)))',
+		'translateY(calc(-1 * var(--piece-size)))',
+		'translateX(var(--piece-size)) translateY(calc(-1 * var(--piece-size)))',
+		'translateX(calc(-1 * var(--piece-size)))',
+		'',
+		'translateX(var(--piece-size))',
+		'translateX(calc(-1 * var(--piece-size))) translateY(var(--piece-size))',
+		'translateY(var(--piece-size))',
+		'translateX(var(--piece-size)) translateY(var(--piece-size))',
+	];
+
+	const transformStyles = [...Array(54)].map((_, index) =>
+		`${transformPrefixes[Math.floor(index / 9)]}translateZ(var(--cube-half)) ${sideTransforms[(index % 9)]}`
+	)
+
+	const pieces = document.getElementsByClassName('cube-piece');
+
+	Array.prototype.forEach.call(pieces, (piece, index) =>
+		piece.style.transform = transformStyles[index]
+	);
 
 }
 
