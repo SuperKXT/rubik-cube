@@ -1,0 +1,259 @@
+body {
+	font-family: sans-serif;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	perspective: 1000px;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	--cube-size: 180px;
+	--cube-half: 90px;
+	--piece-size: 60px;
+	--piece-half: 30px;
+}
+
+.cube {
+	font-size: 20px;
+	width: var(--cube-size);
+	height: var(--cube-size);
+	transform-style: preserve-3d;
+	transition: transform 0.3s linear;
+}
+
+.cube.animate {
+	animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotateX(20deg) rotateY(360deg);
+	}
+	100% {
+		transform: rotateX(20deg) rotateY(0deg);
+	}
+}
+
+.cube-piece {
+	position: absolute;
+	top: calc(var(--cube-half) - var(--piece-half));
+	left: calc(var(--cube-half) - var(--piece-half));
+	width: var(--piece-size);
+	height: var(--piece-size);
+	background: rgba(245, 93, 67, 0.6);
+	color: white;
+	cursor: pointer;
+	box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5) ;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cube-piece:hover {
+	border-width: 3px;
+	background: rgba(124, 32, 16, 0.6);
+}
+
+.cube-piece:nth-child(1) {
+	transform: translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size))) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(2) {
+	transform: translateZ(var(--cube-half)) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(3) {
+	transform: translateZ(var(--cube-half)) translateX(var(--piece-size)) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(4) {
+	transform: translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(5) {
+	transform: translateZ(var(--cube-half));
+}
+.cube-piece:nth-child(6) {
+	transform: translateZ(var(--cube-half)) translateX(var(--piece-size));
+}
+.cube-piece:nth-child(7) {
+	transform: translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size))) translateY(var(--piece-size));
+}
+.cube-piece:nth-child(8) {
+	transform: translateZ(var(--cube-half)) translateY(var(--piece-size));
+}
+.cube-piece:nth-child(9) {
+	transform: translateZ(var(--cube-half)) translateX(var(--piece-size)) translateY(var(--piece-size));
+}
+
+.cube-piece:nth-child(10) {
+	transform: rotateY(90deg) translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size))) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(11) {
+	transform: rotateY(90deg) translateZ(var(--cube-half)) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(12) {
+	transform: rotateY(90deg) translateZ(var(--cube-half)) translateX(var(--piece-size)) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(13) {
+	transform: rotateY(90deg) translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(14) {
+	transform: rotateY(90deg) translateZ(var(--cube-half));
+}
+.cube-piece:nth-child(15) {
+	transform: rotateY(90deg) translateZ(var(--cube-half)) translateX(var(--piece-size));
+}
+.cube-piece:nth-child(16) {
+	transform: rotateY(90deg) translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size))) translateY(var(--piece-size));
+}
+.cube-piece:nth-child(17) {
+	transform: rotateY(90deg) translateZ(var(--cube-half)) translateY(var(--piece-size));
+}
+.cube-piece:nth-child(18) {
+	transform: rotateY(90deg) translateZ(var(--cube-half)) translateX(var(--piece-size)) translateY(var(--piece-size));
+}
+
+.cube-piece:nth-child(19) {
+	transform: translateZ(calc(-1 * var(--cube-half))) rotateY(-180deg) translateX(calc(-1 * var(--piece-size))) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(20) {
+	transform: translateZ(calc(-1 * var(--cube-half))) rotateY(-180deg) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(21) {
+	transform: translateZ(calc(-1 * var(--cube-half))) rotateY(-180deg) translateX(var(--piece-size)) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(22) {
+	transform: translateZ(calc(-1 * var(--cube-half))) rotateY(-180deg) translateX(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(23) {
+	transform: translateZ(calc(-1 * var(--cube-half))) rotateY(-180deg);
+}
+.cube-piece:nth-child(24) {
+	transform: translateZ(calc(-1 * var(--cube-half))) rotateY(-180deg) translateX(var(--piece-size));
+}
+.cube-piece:nth-child(25) {
+	transform: translateZ(calc(-1 * var(--cube-half))) rotateY(-180deg) translateX(calc(-1 * var(--piece-size))) translateY(var(--piece-size));
+}
+.cube-piece:nth-child(26) {
+	transform: translateZ(calc(-1 * var(--cube-half))) rotateY(-180deg) translateY(var(--piece-size));
+}
+.cube-piece:nth-child(27) {
+	transform: translateZ(calc(-1 * var(--cube-half))) rotateY(-180deg) translateX(var(--piece-size)) translateY(var(--piece-size));
+}
+
+.cube-piece:nth-child(28) {
+	transform: rotateY(-90deg) translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size))) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(29) {
+	transform: rotateY(-90deg) translateZ(var(--cube-half)) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(30) {
+	transform: rotateY(-90deg) translateZ(var(--cube-half)) translateX(var(--piece-size)) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(31) {
+	transform: rotateY(-90deg) translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(32) {
+	transform: rotateY(-90deg) translateZ(var(--cube-half));
+}
+.cube-piece:nth-child(33) {
+	transform: rotateY(-90deg) translateZ(var(--cube-half)) translateX(var(--piece-size));
+}
+.cube-piece:nth-child(34) {
+	transform: rotateY(-90deg) translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size))) translateY(var(--piece-size));
+}
+.cube-piece:nth-child(35) {
+	transform: rotateY(-90deg) translateZ(var(--cube-half)) translateY(var(--piece-size));
+}
+.cube-piece:nth-child(36) {
+	transform: rotateY(-90deg) translateZ(var(--cube-half)) translateX(var(--piece-size)) translateY(var(--piece-size));
+}
+
+.cube-piece:nth-child(37) {
+	transform: rotateX(90deg) translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size))) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(38) {
+	transform: rotateX(90deg) translateZ(var(--cube-half)) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(39) {
+	transform: rotateX(90deg) translateZ(var(--cube-half)) translateX(var(--piece-size)) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(40) {
+	transform: rotateX(90deg) translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(41) {
+	transform: rotateX(90deg) translateZ(var(--cube-half));
+}
+.cube-piece:nth-child(42) {
+	transform: rotateX(90deg) translateZ(var(--cube-half)) translateX(var(--piece-size));
+}
+.cube-piece:nth-child(43) {
+	transform: rotateX(90deg) translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size))) translateY(var(--piece-size));
+}
+.cube-piece:nth-child(44) {
+	transform: rotateX(90deg) translateZ(var(--cube-half)) translateY(var(--piece-size));
+}
+.cube-piece:nth-child(45) {
+	transform: rotateX(90deg) translateZ(var(--cube-half)) translateX(var(--piece-size)) translateY(var(--piece-size));
+}
+
+.cube-piece:nth-child(46) {
+	transform: rotateX(-90deg) translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size))) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(47) {
+	transform: rotateX(-90deg) translateZ(var(--cube-half)) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(48) {
+	transform: rotateX(-90deg) translateZ(var(--cube-half)) translateX(var(--piece-size)) translateY(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(49) {
+	transform: rotateX(-90deg) translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size)));
+}
+.cube-piece:nth-child(50) {
+	transform: rotateX(-90deg) translateZ(var(--cube-half));
+}
+.cube-piece:nth-child(51) {
+	transform: rotateX(-90deg) translateZ(var(--cube-half)) translateX(var(--piece-size));
+}
+.cube-piece:nth-child(52) {
+	transform: rotateX(-90deg) translateZ(var(--cube-half)) translateX(calc(-1 * var(--piece-size))) translateY(var(--piece-size));
+}
+.cube-piece:nth-child(53) {
+	transform: rotateX(-90deg) translateZ(var(--cube-half)) translateY(var(--piece-size));
+}
+.cube-piece:nth-child(54) {
+	transform: rotateX(-90deg) translateZ(var(--cube-half)) translateX(var(--piece-size)) translateY(var(--piece-size));
+}
+
+
+.cube-controls {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto 50px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 10px;
+}
+
+.cube-controls button {
+	background: rgba(245, 93, 67, 1);
+	border: 2px solid rgb(151, 36, 15);
+	box-shadow: inset 0 0 10px rgba(155, 13, 13, 0.5), 1px 1px 1px rgb(168, 168, 168);
+	color: white;
+	padding: 10px 20px;
+	outline: none;
+	font-weight: bold;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.cube-controls button:hover {
+	background: rgba(245, 93, 67, 0.8);
+	box-shadow: inset 0 0 10px rgba(155, 13, 13, 0.5), 2px 2px 2px rgb(168, 168, 168) ;
+}
