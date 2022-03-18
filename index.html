@@ -2,87 +2,27 @@
 <html>
 
 <head>
-	<title>Parcel Sandbox</title>
-	<meta charset="UTF-8" />
+	<title>Saad's Rubik's Cube</title>
+	<meta charset='UTF-8' />
 	<link rel='stylesheet' href='styles.css' />
 </head>
 
 <body>
-	<div id="cube" class="cube animate">
 
-		<div class="cube-piece">1</div>
-		<div class="cube-piece">2</div>
-		<div class="cube-piece">3</div>
-		<div class="cube-piece">4</div>
-		<div class="cube-piece">5</div>
-		<div class="cube-piece">6</div>
-		<div class="cube-piece">7</div>
-		<div class="cube-piece">8</div>
-		<div class="cube-piece">9</div>
+	<button id='themeToggle'>Light</button>
 
-		<div class="cube-piece">10</div>
-		<div class="cube-piece">11</div>
-		<div class="cube-piece">12</div>
-		<div class="cube-piece">13</div>
-		<div class="cube-piece">14</div>
-		<div class="cube-piece">15</div>
-		<div class="cube-piece">16</div>
-		<div class="cube-piece">17</div>
-		<div class="cube-piece">18</div>
+	<div id='cube' class='cube animate'></div>
 
-		<div class="cube-piece">19</div>
-		<div class="cube-piece">20</div>
-		<div class="cube-piece">21</div>
-		<div class="cube-piece">22</div>
-		<div class="cube-piece">23</div>
-		<div class="cube-piece">24</div>
-		<div class="cube-piece">25</div>
-		<div class="cube-piece">26</div>
-		<div class="cube-piece">27</div>
-
-		<div class="cube-piece">28</div>
-		<div class="cube-piece">29</div>
-		<div class="cube-piece">30</div>
-		<div class="cube-piece">31</div>
-		<div class="cube-piece">32</div>
-		<div class="cube-piece">33</div>
-		<div class="cube-piece">34</div>
-		<div class="cube-piece">35</div>
-		<div class="cube-piece">36</div>
-
-		<div class="cube-piece">37</div>
-		<div class="cube-piece">38</div>
-		<div class="cube-piece">39</div>
-		<div class="cube-piece">40</div>
-		<div class="cube-piece">41</div>
-		<div class="cube-piece">42</div>
-		<div class="cube-piece">43</div>
-		<div class="cube-piece">44</div>
-		<div class="cube-piece">45</div>
-
-		<div class="cube-piece">46</div>
-		<div class="cube-piece">47</div>
-		<div class="cube-piece">48</div>
-		<div class="cube-piece">49</div>
-		<div class="cube-piece">50</div>
-		<div class="cube-piece">51</div>
-		<div class="cube-piece">52</div>
-		<div class="cube-piece">53</div>
-		<div class="cube-piece">54</div>
-
+	<div class='cube-controls'>
+		<button id='animationToggle'>Stop Animation</button>
+		<button class='rotate-button' data-direction='left'>←</button>
+		<button class='rotate-button' data-direction='right'>→</button>
+		<button class='rotate-button' data-direction='up'>↑</button>
+		<button class='rotate-button' data-direction='down'>↓</button>
 	</div>
 
-	<div class="cube-controls">
-		<button id="stopButton">Stop Animation</button>
-		<button id="rotateLeft">←</button>
-		<button id="rotateRight">→</button>
-		<button id="rotateUp">↑</button>
-		<button id="rotateDown">↓</button>
-	</div>
+	<script src='index.js'></script>
 
-	<button id='themeButton'>Light</button>
-
-	<script src="index.js"></script>
 </body>
 
 </html>
