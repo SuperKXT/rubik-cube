@@ -1,0 +1,26 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./",
+		"lib": [
+			"ES6",
+			"dom"
+		],
+		"target": "ES6",
+		"module": "ES6",
+		"moduleResolution": "Node",
+		"jsx": "react-jsx",
+		"downlevelIteration": true,
+		"checkJs": false,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"noImplicitReturns": true,
+		"noImplicitOverride": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictPropertyInitialization": true,
+		"allowSyntheticDefaultImports": true
+	},
+	"include": [
+		"./*"
+	]
+}
